@@ -1,0 +1,43 @@
+{% extends 'estudiantes/base.html' %}
+
+{% block title %}Eliminar Estudiante{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger">
+            <div class="card-header bg-danger text-white">
+                <h3 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Confirmar Eliminación</h3>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    <strong>¡Advertencia!</strong> Esta acción no se puede deshacer.
+                </div>
+
+                <p>¿Estás seguro de que deseas eliminar el siguiente estudiante?</p>
+
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <p><strong>Código:</strong> {{ estudiante.codigo }}</p>
+                        <p><strong>Nombre:</strong> {{ estudiante.nombre }} {{ estudiante.apellido }}</p>
+                        <p><strong>Programa:</strong> {{ estudiante.programa }}</p>
+                        <p class="mb-0"><strong>Email:</strong> {{ estudiante.email }}</p>
+                    </div>
+                </div>
+
+                <form method="post" class="mt-4">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'lista_estudiantes' %}" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Sí, Eliminar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

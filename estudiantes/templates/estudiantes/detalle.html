@@ -1,0 +1,65 @@
+{% extends 'estudiantes/base.html' %}
+
+{% block title %}Detalle del Estudiante{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0"><i class="bi bi-person-badge"></i> Detalle del Estudiante</h3>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Código:</div>
+                    <div class="col-md-8"><strong>{{ estudiante.codigo }}</strong></div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Nombre Completo:</div>
+                    <div class="col-md-8">{{ estudiante.nombre }} {{ estudiante.apellido }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Email:</div>
+                    <div class="col-md-8">{{ estudiante.email }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Programa:</div>
+                    <div class="col-md-8">{{ estudiante.programa }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Semestre:</div>
+                    <div class="col-md-8">{{ estudiante.semestre }}°</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Fecha de Ingreso:</div>
+                    <div class="col-md-8">{{ estudiante.fecha_ingreso|date:"d/m/Y" }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4 text-muted">Estado:</div>
+                    <div class="col-md-8">
+                        {% if estudiante.activo %}
+                            <span class="badge bg-success">Activo</span>
+                        {% else %}
+                            <span class="badge bg-secondary">Inactivo</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="d-flex gap-2">
+                    <a href="{% url 'lista_estudiantes' %}" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Volver
+                    </a>
+                    <a href="{% url 'actualizar_estudiante' estudiante.pk %}" class="btn btn-warning">
+                        <i class="bi bi-pencil"></i> Editar
+                    </a>
+                    <a href="{% url 'eliminar_estudiante' estudiante.pk %}" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Eliminar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
