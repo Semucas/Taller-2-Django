@@ -1,0 +1,108 @@
+{% extends 'estudiantes/base.html' %}
+
+{% block title %}Inicio - Sistema de Estudiantes{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <div class="mb-5">
+        <i class="bi bi-mortarboard-fill" style="font-size: 5rem; color: #0d6efd;"></i>
+    </div>
+    
+    <h1 class="display-3 fw-bold mb-4">Sistema de Gestión de Estudiantes</h1>
+    
+    <p class="lead text-muted mb-5">
+        Aplicación web desarrollada con Django para administrar información de estudiantes.<br>
+        Implementa arquitectura MVT y operaciones CRUD completas.
+    </p>
+    
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-10">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card text-center h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <i class="bi bi-plus-circle text-primary" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3 fw-bold">Crear</h5>
+                            <p class="card-text text-muted">Registrar nuevos estudiantes en el sistema</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100 shadow-sm border-info">
+                        <div class="card-body">
+                            <i class="bi bi-eye text-info" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3 fw-bold">Leer</h5>
+                            <p class="card-text text-muted">Consultar y visualizar información detallada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100 shadow-sm border-warning">
+                        <div class="card-body">
+                            <i class="bi bi-pencil text-warning" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3 fw-bold">Actualizar</h5>
+                            <p class="card-text text-muted">Modificar registros existentes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center h-100 shadow-sm border-danger">
+                        <div class="card-body">
+                            <i class="bi bi-trash text-danger" style="font-size: 3rem;"></i>
+                            <h5 class="card-title mt-3 fw-bold">Eliminar</h5>
+                            <p class="card-text text-muted">Borrar estudiantes del sistema</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-3">
+                        <i class="bi bi-check-circle-fill text-success"></i> Características
+                    </h4>
+                    <div class="row text-start">
+                        <div class="col-md-6 mb-3">
+                            <i class="bi bi-diagram-3 text-primary"></i> 
+                            <strong>Arquitectura MVT:</strong> Model-View-Template
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="bi bi-bootstrap text-primary"></i> 
+                            <strong>Bootstrap 5:</strong> Diseño moderno y responsivo
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="bi bi-database text-primary"></i> 
+                            <strong>Base de datos:</strong> SQLite con Django ORM
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="bi bi-shield-check text-primary"></i> 
+                            <strong>Validaciones:</strong> Formularios seguros
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="d-grid gap-3 d-md-block">
+        <a href="{% url 'lista_estudiantes' %}" class="btn btn-primary btn-lg px-5 shadow">
+            <i class="bi bi-arrow-right-circle"></i> Ir al Sistema
+        </a>
+        <a href="/admin/" class="btn btn-outline-secondary btn-lg px-5 ms-md-3">
+            <i class="bi bi-gear"></i> Panel Admin
+        </a>
+    </div>
+    
+    <div class="mt-5 pt-5 border-top">
+        <p class="text-muted">
+            <strong>Taller 2 - Plataformas de Programación Empresarial</strong><br>
+            Desarrollado con Django | Python | Bootstrap 5<br>
+            <small>Universidad 2026-1</small>
+        </p>
+    </div>
+</div>
+{% endblock %}

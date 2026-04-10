@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Estudiante
 
+# Vista para la página de inicio
+def inicio(request):
+    return render(request, 'estudiantes/inicio.html')
+
 # Vista para listar todos los estudiantes (READ)
 def lista_estudiantes(request):
     estudiantes = Estudiante.objects.all()
